@@ -1,0 +1,19 @@
+"""
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+import pickle
+
+
+df = pd.read_csv('datasets/fraud.csv')
+
+
+X = df.drop('Class', axis=1)
+y = df['Class']
+
+
+model = LogisticRegression()
+model.fit(X, y)
+
+
+pickle.dump(model, open('models/fraud_model.pkl','wb'))
+"""

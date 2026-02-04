@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Projects Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            color: #4a90e2;
+        }
+
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #4a90e2;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #357abd;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 20px 10px;
+            }
+
+            a {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>AI Projects Mega Dashboard</h1>
+    </header>
+    <main>
+        <p>Welcome to your AI-powered dashboard. Select a project below to get started:</p>
+        <h1>AI Projects Dashboard</h1>
+
+        <ul>
+            <li><a href="/sentiment">Sentiment</a></li>
+            <li><a href="/fake_news">Fake News</a></li>
+            <li><a href="/parkinsons">Parkinsons</a></li>
+            <li><a href="/fraud">Fraud</a></li>
+            <li><a href="/recommender">Movies</a></li>
+            <li><a href="/segmentation">Segmentation</a></li>
+            <li><a href="/uber">Uber Analysis</a></li>
+        </ul>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 AI Dashboard. Powered by Machine Learning.</p>
+    </footer>
+</body>
+
+</html>
