@@ -1,0 +1,9 @@
+datasets/movies/ratings.csv
+datasets/*.csv
+datasets/*.csv
+models/
+datasets/
+*.pkl
+*.dat
+__pycache__/
+venv/

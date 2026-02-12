@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Projects Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            color: #4a90e2;
+        }
+
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .intro {
+            margin-bottom: 30px;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        /* DASHBOARD GRID */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        }
+
+        .card a {
+            display: block;
+            text-decoration: none;
+            color: #4a90e2;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>AI Projects Mega Dashboard</h1>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <div class="intro">
+            Welcome to your AI-powered dashboard.
+            Explore and interact with multiple Machine Learning & Deep Learning systems.
+        </div>
+
+        <!-- DASHBOARD GRID -->
+        <div class="dashboard">
+
+            <div class="card">
+                <a href="{{ url_for('sentiment') }}">
+                    Sentiment Analysis
+                </a>
+                <p>Analyze text sentiment as Positive or Negative.</p>
+            </div>
+
+            <div class="card">
+                <a href="{{ url_for('fake_news') }}">
+                    Fake News Detection
+                </a>
+                <p>Detect whether a news article is real or fake.</p>
+            </div>
+
+            <div class="card">
+                <a href="{{ url_for('parkinsons') }}">
+                    Parkinson’s Detection
+                </a>
+                <p>Predict Parkinson’s disease using biomedical data.</p>
+            </div>
+
+            <div class="card">
+                <a href="{{ url_for('speech_emotion') }}">
+                    Speech Emotion
+                </a>
+                <p>Detect emotions from voice recordings.</p>
+            </div>
+
+            <div class="card">
+                <a href="{{ url_for('drowsiness') }}">
+                    Drowsiness Detection
+                </a>
+                <p>Real-time driver fatigue monitoring.</p>
+            </div>
+
+            <div class="card">
+                <a href="{{ url_for('fraud') }}">
+                    Fraud Detection
+                </a>
+                <p>Identify fraudulent credit card transactions.</p>
+            </div>
+
+            <div class="card">
+                <a href="{{ url_for('movie_recommender') }}">
+                    Movie Recommender
+                </a>
+                <p>Get recommendations based on similarity.</p>
+            </div>
+
+            <div class="card">
+                <a href="{{ url_for('segmentation') }}">
+                    Customer Segmentation
+                </a>
+                <p>Cluster customers into behavioral groups.</p>
+            </div>
+
+            <div class="card">
+                <a href="{{ url_for('uber') }}">
+                    Uber Analysis
+                </a>
+                <p>Analyze Uber trip demand trends.</p>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2023 AI Dashboard. Powered by Machine Learning.</p>
+    </footer>
+
+</body>
+
+</html>

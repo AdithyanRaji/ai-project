@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber Analysis</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+            color: #4a90e2;
+        }
+
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .plot-img {
+            max-width: 700px;
+            display: block;
+            margin: auto;
+            margin-top: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            background-color: #fff;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 20px 10px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>
+            <a href="{{ url_for('index') }}" style="color: #4a90e2; text-decoration: none;">
+                AI Dashboard
+            </a>
+        </h1>
+        <nav>
+            <a href="{{ url_for('index') }}"
+                style="display: inline-block; background-color: red; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">
+                BACK TO DASHBOARD
+            </a>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <h2>Uber Analysis: Trips by Hour</h2>
+        <p>View the number of trips aggregated by hour.</p>
+
+        <div class="content">
+
+            <!-- TABLE SECTION -->
+            {% if trips %}
+            <table>
+                <tr>
+                    <th>Hour</th>
+                    <th>Trips</th>
+                </tr>
+
+                {% for k, v in trips.items() %}
+                <tr>
+                    <td>{{ k }}</td>
+                    <td>{{ v }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <p>No trip data available.</p>
+            {% endif %}
+
+            <!-- VISUALIZATION SECTION -->
+            {% if plot_url %}
+            <h3 style="margin-top:30px;">
+                Hourly Trip Visualization
+            </h3>
+
+            <img src="{{ plot_url }}" alt="Uber Trips by Hour" class="plot-img">
+            {% endif %}
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2023 AI Dashboard. Powered by Machine Learning.</p>
+    </footer>
+
+</body>
+
+</html>
