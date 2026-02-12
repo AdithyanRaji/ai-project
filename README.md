@@ -1,6 +1,6 @@
 # AI Project Dashboard
 
-A comprehensive Flask-based web application featuring 10 AI/ML capabilities including sentiment analysis, fake news detection, fraud detection, movie recommendations, customer segmentation, and more.
+A comprehensive Flask-based web application featuring 9 AI/ML capabilities including sentiment analysis, fake news detection, fraud detection, movie recommendations, customer segmentation, and more.
 
 ## 📋 Features
 
@@ -23,11 +23,7 @@ A comprehensive Flask-based web application featuring 10 AI/ML capabilities incl
 - Recognize emotions from audio (alpha/beta)
 - Route: `/speech_emotion`
 
-### 5. **Gender & Age Detection**
-- Detect gender and age from images (alpha/beta)
-- Route: `/gender_age`
-
-### 6. **Drowsiness Detection**
+### 5. **Drowsiness Detection**
 - Real-time webcam-based drowsiness detection
 - Uses dlib face detection + eye aspect ratio (EAR)
 - Route: `/drowsiness`
@@ -42,12 +38,12 @@ A comprehensive Flask-based web application featuring 10 AI/ML capabilities incl
 - Uses cosine similarity on genre features
 - Route: `/recommender`
 
-### 9. **Customer Segmentation**
+### 8. **Customer Segmentation**
 - K-Means clustering of customers by behavior
 - Features: Age, Annual Income, Spending Score
 - Route: `/segmentation`
 
-### 10. **Uber Trip Analysis**
+### 9. **Uber Trip Analysis**
 - Analyze Uber trips by hour with visualization
 - Generates historical trend plots
 - Route: `/uber`
@@ -146,7 +142,6 @@ ai-project/
 │   ├── fake_news.html
 │   ├── parkinsons.html
 │   ├── speech_emotion.html
-│   ├── gender_age.html
 │   ├── drowsiness.html
 │   ├── fraud.html
 │   ├── recommender.html
@@ -200,7 +195,6 @@ python train_speech_emotion.py
 | `/fake_news` | GET, POST | Fake news detection |
 | `/parkinsons` | GET, POST | Parkinson's detection |
 | `/speech_emotion` | GET, POST | Speech emotion (upload audio) |
-| `/gender_age` | GET, POST | Gender & age detection (upload image) |
 | `/drowsiness` | GET, POST | Drowsiness detection |
 | `/fraud` | GET, POST | Fraud detection |
 | `/recommender` | GET, POST | Movie recommendations |
@@ -257,7 +251,7 @@ See `requirements.txt` for full list with versions.
 
 ## 📋 Known Limitations
 
-1. **Speech Emotion & Gender/Age**: Currently placeholders - full implementation requires model training
+1. **Speech Emotion**: Currently placeholder - full implementation requires model training
 2. **Drowsiness Detection**: Requires desktop/webcam access (won't work in headless/server environments)
 3. **Form Extraction**: Numeric routes assume form fields contain only numeric values
 4. **Static Files**: Uber plot generation creates `static/plots/` directory on-demand
@@ -291,7 +285,6 @@ This project is open source. Add your license here.
 
 ## 🎯 Future Enhancements
 
-- [ ] Implement gender/age detection with trained model
 - [ ] Implement speech emotion recognition
 - [ ] Add user authentication
 - [ ] Create API endpoints for programmatic access
